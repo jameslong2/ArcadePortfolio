@@ -1,11 +1,11 @@
 import * as THREE from './node_modules/three/build/three.module.js';
-import * as CANNON from 'cannon-es';
-import CannonDebugger from 'cannon-es-debugger';
-import CannonUtils from 'cannon-utils';
+import * as CANNON from './node_modules/cannon-es/dist/cannon-es.js';
+import CannonDebugger from './node_modules/cannon-es-debugger/dist/cannon-es-debugger.js';
+import CannonUtils from './node_modules/cannon-utils/dist/cannon-utils.js';
 import * as BufferGeometryUtils from './node_modules/three/examples/jsm/utils/BufferGeometryUtils.js';
 import { ConvexGeometry } from './node_modules/three/examples/jsm/geometries/ConvexGeometry.js';
 import { FBXLoader } from './node_modules/three/examples/jsm/loaders/FBXLoader.js';
-import { Material, Trimesh, Vec3 } from 'cannon-es';
+import { Material, Trimesh, Vec3 } from './node_modules/cannon-es/dist/cannon-es.js';
 import { BufferGeometry, CubeTextureLoader, Group, MeshMatcapMaterial, SpotLight } from 'three';
 import {HTMLRenderer} from './renderer.js';
 import {EffectComposer} from './node_modules/three/examples/jsm/postprocessing/EffectComposer.js';
