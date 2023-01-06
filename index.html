@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./icon.png">
+    <title>Arcade</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        canvas{
+            width: 100%;
+            height: 100%;
+        }
+        #video{
+            display: none;
+        }
+        #contenido{
+            height: 300px;
+            width: 256px;
+            background: rgb(188, 207, 248);
+            position: fixed;
+        }
+        #arriba{
+            position: fixed;
+            left: 45%;
+            width: 10%;
+            top:7%;
+            height: 7%;
+        }
+        #abajo{
+            position: fixed;
+            left: 45%;
+            width: 10%;
+            top:65%;
+            height: 7%;
+            transform: rotate(180deg) scaleX(-1);
+        }
+        #derecha{
+            position: fixed;
+            left: 75%;
+            width: 10%;
+            top:32.5%;
+            height: 7%;
+            transform: rotate(90deg) scaleX(-1);
+        }
+        #izquierda{
+            position: fixed;
+            right: 75%;
+            width: 10%;
+            top:32.5%;
+            height: 7%;
+            transform: rotate(-90deg) scaleX(-1);
+        }
+        p{
+            font-size: 170%;
+        }
+        #proyecto1{
+            background-color: rgb(90, 90, 255);
+            top:10%;
+        }
+        #proyecto2{
+            top:17%;
+        }
+        #proyecto3{
+            top:24%;
+        }
+        #proyecto4{
+            top:31%;
+        }
+        .elementoProyecto{
+            text-align: center;
+            position: fixed;
+            width: 13.5%;
+        }
+    </style>
+</head>
+<body>
+    
+    <!--<video controls autoplay id="video">
+        <source src="elvideofinal.mp4" type="video/mp4">
+      </video>-->
+    <div id="contenido">
+        <div id="proyecto1" class="elementoProyecto">
+            <p>Elemento 1</p>
+        </div>
+        <div id="proyecto2" class="elementoProyecto">
+            <p>Elemento 2</p>
+        </div>
+        <div id="proyecto3" class="elementoProyecto">
+            <p>Elemento 3</p>
+        </div>
+        <div id="proyecto4" class="elementoProyecto">
+            <p>Elemento 4</p>
+        </div>
+    </div>
+    <img src="./Flecha.png" alt="" id="arriba">
+    <img src="./Flecha.png" alt="" id="abajo">
+    <img src="./Flecha.png" alt="" id="derecha">
+    <img src="./Flecha.png" alt="" id="izquierda">
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "./node_modules/three/build/three.module.js",
+            "cannon-es": "./node_modules/cannon-es/dist/cannon-es.js",
+            "cannon-es-debugger": "./node_modules/cannon-es-debugger/dist/cannon-es-debugger.js",
+            "cannon-utils": "./node_modules/cannon-utils/dist/cannon-utils.js"
+          }
+        }
+        </script>
+    <script src="./html2canvas.min.js"></script>
+    <script src="./main.js" type="module"></script>
+</body>
+</html>

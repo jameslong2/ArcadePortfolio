@@ -1,0 +1,12 @@
+{
+  "devDependencies": {
+    "three": "^0.145.0"
+  },
+  "dependencies": {
+    "cannon-es": "^0.20.0",
+    "cannon-es-debugger": "^1.0.0",
+    "cannon-utils": "^0.1.4",
+    "html2canvas": "^1.4.1",
+    "postprocessing": "^6.29.2"
+  }
+}
