@@ -142,7 +142,7 @@ arcadeLoader.load(
             var ball;
             var ballLoader = new FBXLoader();
             ballLoader.load(
-                'ball.fbx', function (object) {
+                './bola/ball.fbx', function (object) {
                     ball=object;
                     ball.name="ball";
                     scene.add(ball);
