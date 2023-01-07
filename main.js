@@ -217,6 +217,8 @@ function Update() {
     else if(ballClicked && !isThrowing){
         ballBody.velocity=CANNON.Vec3.ZERO;
         ballBody.position.set(THREE.MathUtils.clamp(mousePos.x,-193.5,-113.5),THREE.MathUtils.clamp(mousePos.y,125,280),370);
+    }else{
+        ballBody.position.set(THREE.MathUtils.clamp(ballBody.position.x,-193.5,-113.5),THREE.MathUtils.clamp(ballBody.position.y,125,280),THREE.MathUtils.clamp(ballBody.position.z,125,400));
     }
     //
     if(ball!=null){
