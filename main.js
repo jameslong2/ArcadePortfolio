@@ -459,9 +459,10 @@ function DragStop(){
         isThrowing=false;
         isOverBall=false;
         var distance=firstClickPos.distanceTo(mousePos);
+        var offsetx=Math.abs(firstClickPos.x-mousePos.x)*(firstClickPos.x>mousePos.x?-1:1);
         lastTime=new Date().getTime();
         var velocity=distance/(lastTime-firstTime);
-        ballBody.applyImpulse(new CANNON.Vec3(0,distance*4.3,-velocity*500));
+        ballBody.applyImpulse(new CANNON.Vec3(offsetx,distance*4.3,-velocity*500));
     }
 }
 //
