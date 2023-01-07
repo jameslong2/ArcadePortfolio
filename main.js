@@ -210,6 +210,7 @@ function Update() {
     }
 
     //
+    ballBody.position.set(THREE.MathUtils.clamp(ballBody.position.x,-193.5,-113.5),THREE.MathUtils.clamp(ballBody.position.y,125,280),THREE.MathUtils.clamp(ballBody.position.z,0,400));
     if(ballClicked && isThrowing){
         ballBody.velocity=CANNON.Vec3.ZERO;
         ballBody.position.set(firstClickPos.x,firstClickPos.y,370);
@@ -217,9 +218,6 @@ function Update() {
     else if(ballClicked && !isThrowing){
         ballBody.velocity=CANNON.Vec3.ZERO;
         ballBody.position.set(THREE.MathUtils.clamp(mousePos.x,-193.5,-113.5),THREE.MathUtils.clamp(mousePos.y,125,280),370);
-    }else if(!ballClicked && !isThrowing){
-        console.log("nada");
-        ballBody.position.set(THREE.MathUtils.clamp(ballBody.position.x,-193.5,-113.5),THREE.MathUtils.clamp(ballBody.position.y,125,280),THREE.MathUtils.clamp(ballBody.position.z,0,370));
     }
     //
     if(ball!=null){
