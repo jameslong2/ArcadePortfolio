@@ -380,6 +380,7 @@ function CrearPantalla(){
 function CreateArcadeCanvas(){
     html2canvas(document.querySelector("#contenido")).then(canvas => {
         canvas1=canvas;
+        pantalla.children[0].material.map=new THREE.CanvasTexture(canvas1.getContext('2d').canvas);
         creado=true;
     });
 }
