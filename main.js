@@ -65,7 +65,7 @@ const cannonDebugger = new CannonDebugger(scene, physicsWorld);
 const ballBody=new CANNON.Body({type:CANNON.Body.DYNAMIC,mass:1});
 ballBody.addShape(new CANNON.Sphere(19));
 ballBody.position.set(-153.5,200,410);
-ballBody.angularDamping=0.1;
+ballBody.angularDamping=0.14;
 physicsWorld.addBody(ballBody);
 
 //renderer.render(scene, camera);
