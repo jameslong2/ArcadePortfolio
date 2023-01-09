@@ -62,7 +62,8 @@ const physicsWorld = new CANNON.World({
 });
 const cannonDebugger = new CannonDebugger(scene, physicsWorld);
 
-const ballBody=new CANNON.Body({type:CANNON.Body.DYNAMIC,mass:1});
+var physMat=new CANNON.Material({friction:0.1});
+const ballBody=new CANNON.Body({type:CANNON.Body.DYNAMIC,mass:1,material:physMat});
 ballBody.addShape(new CANNON.Sphere(19));
 ballBody.position.set(-153.5,200,410);
 ballBody.angularDamping=0.14;
@@ -188,12 +189,7 @@ arcadeLoader.load(
 var id;
 function Update() {
     id=requestAnimationFrame(Update);
-    var stepsPerRender = 30;
-    var stepSize = 1 / (60 * stepsPerRender);
-    for (var i = 0; i < stepsPerRender; i++) {
-        physicsWorld.step(stepSize);
-    }
-    //physicsWorld.fixedStep();
+    physicsWorld.fixedStep();
     //cannonDebugger.update();
     if (mixer != null) {
         mixer.update(reloj.getDelta());
@@ -252,7 +248,7 @@ Update();
 function Init(){
     console.log("hola");
     ball.children[0].name="bola";
-    const roadbody = new CANNON.Body({ type: CANNON.Body.STATIC, mass: 0});
+    const roadbody = new CANNON.Body({ type: CANNON.Body.STATIC, mass: 0,material:physMat});
     for(var i=0;i<canasta.children.length;i++){
         //var newGeometry = BufferGeometryUtils.mergeVertices(canasta.children[i].geometry);
         var newGeometry = BufferGeometryUtils.mergeVertices(canasta.children[i].geometry);
