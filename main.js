@@ -67,7 +67,6 @@ physicsWorld.addContactMaterial(new CANNON.ContactMaterial(mat1Phys,mat1Phys,{fr
 const ballBody=new CANNON.Body({type:CANNON.Body.DYNAMIC,mass:1,material:mat1Phys});
 ballBody.addShape(new CANNON.Sphere(19));
 ballBody.position.set(-153.5,200,410);
-ballBody.angularDamping=0.35;
 physicsWorld.addBody(ballBody);
 
 //renderer.render(scene, camera);
