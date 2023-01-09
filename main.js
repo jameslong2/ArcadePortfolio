@@ -192,7 +192,6 @@ function Update() {
         mixer.update(reloj.getDelta());
     }
     if(!isChanged && creado && arcade!=null && pantalla!=null && sala!=null && canasta!=null && ball!=null){
-        creado=false;
         Init();
     }
     if(creado && canvas1!=null && pantalla!=null){
