@@ -190,7 +190,7 @@ arcadeLoader.load(
 var id;
 function Update() {
     id=requestAnimationFrame(Update);
-    physicsWorld.step(1000,reloj.getDelta(),20);
+    physicsWorld.step(1000,reloj.getDelta(),100);
     //cannonDebugger.update();
     if (mixer != null) {
         mixer.update(reloj.getDelta());
