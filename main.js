@@ -196,7 +196,7 @@ function Update() {
         creado=false;
     }
     if(creado && canvas1!=null && pantalla!=null){
-        CrearPantalla();
+        //CrearPantalla();
         //creado=false;
     }
     if(isMoving){
