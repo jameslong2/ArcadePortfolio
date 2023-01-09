@@ -61,7 +61,10 @@ const physicsWorld = new CANNON.World({
     gravity: new CANNON.Vec3(0, -170, 0),
 });
 const cannonDebugger = new CannonDebugger(scene, physicsWorld);
-const ballBody=new CANNON.Body({type:CANNON.Body.DYNAMIC,mass:1});
+
+var mat1Phys=new CANNON.Material({friction:0});
+physicsWorld.addContactMaterial(new CANNON.ContactMaterial(mat1Phys,mat1Phys,{friction:0}));
+const ballBody=new CANNON.Body({type:CANNON.Body.DYNAMIC,mass:1,material:mat1Phys});
 ballBody.addShape(new CANNON.Sphere(19));
 ballBody.position.set(-153.5,200,410);
 physicsWorld.addBody(ballBody);
