@@ -451,6 +451,8 @@ function ApplyColor(){
 function PlayBasquet(){
     if(isOverBall){
         ballClicked=true;
+        ballBody.angularVelocity.set(0,0,0);
+        ballBody.quaternion.set(0,0,0,0);
     }
 }
 function Drag(){
