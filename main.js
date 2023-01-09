@@ -193,7 +193,6 @@ function Update() {
     }
     if(!isChanged && creado && arcade!=null && pantalla!=null && sala!=null && canasta!=null && ball!=null){
         Init();
-        CrearPantalla();
     }
     if(creado && canvas1!=null && pantalla!=null){
         CrearPantalla();
@@ -244,6 +243,7 @@ Update();
 
 //
 function Init(){
+    console.log("hola");
     ball.children[0].name="bola";
     const roadbody = new CANNON.Body({ type: CANNON.Body.STATIC, mass: 0});
     for(var i=0;i<canasta.children.length;i++){
