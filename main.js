@@ -190,7 +190,7 @@ arcadeLoader.load(
 var id;
 function Update() {
     id=requestAnimationFrame(Update);
-    var stepsPerRender = 50;
+    var stepsPerRender = 10;
     var stepSize = 1 / (60 * stepsPerRender);
     for (var i = 0; i < stepsPerRender; i++) {
         physicsWorld.step(stepSize);
