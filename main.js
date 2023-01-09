@@ -248,7 +248,7 @@ Update();
 function Init(){
     console.log("hola");
     ball.children[0].name="bola";
-    const roadbody = new CANNON.Body({ type: CANNON.Body.STATIC, mass: 0});
+    const roadbody = new CANNON.Body({ type: CANNON.Body.STATIC, mass: 0,material:mat1Phys});
     for(var i=0;i<canasta.children.length;i++){
         //var newGeometry = BufferGeometryUtils.mergeVertices(canasta.children[i].geometry);
         var newGeometry = BufferGeometryUtils.mergeVertices(canasta.children[i].geometry);
