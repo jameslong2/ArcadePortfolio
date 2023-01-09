@@ -96,7 +96,7 @@ var actualPoint=1;
 var mixer;
 var animationActions = [];
 var canvas1;
-var creado=false;
+var creado=true;
 var arcadeLoader = new FBXLoader();
 var arcade;
 arcadeLoader.load(
