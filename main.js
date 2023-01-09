@@ -196,6 +196,10 @@ function Update() {
         CrearPantalla();
         Init();
     }
+    if(creado && canvas1!=null && pantalla!=null){
+        CrearPantalla();
+        creado=false;
+    }
     if(isMoving){
         if(lerp<1){
             lerp+=1-Math.pow(0.1,reloj.getDelta());
@@ -380,7 +384,6 @@ function CrearPantalla(){
 function CreateArcadeCanvas(){
     html2canvas(document.querySelector("#contenido")).then(canvas => {
         canvas1=canvas;
-        pantalla.children[0].material.map=new THREE.CanvasTexture(canvas1.getContext('2d').canvas);
         creado=true;
     });
 }
