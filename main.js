@@ -62,9 +62,7 @@ const physicsWorld = new CANNON.World({
 });
 const cannonDebugger = new CannonDebugger(scene, physicsWorld);
 
-var mat1Phys=new CANNON.Material({friction:0});
-physicsWorld.addContactMaterial(new CANNON.ContactMaterial(mat1Phys,mat1Phys,{friction:0}));
-const ballBody=new CANNON.Body({type:CANNON.Body.DYNAMIC,mass:1,material:mat1Phys});
+const ballBody=new CANNON.Body({type:CANNON.Body.DYNAMIC,mass:1});
 ballBody.addShape(new CANNON.Sphere(19));
 ballBody.position.set(-153.5,200,410);
 ballBody.angularDamping=0.4;
@@ -249,7 +247,7 @@ Update();
 function Init(){
     console.log("hola");
     ball.children[0].name="bola";
-    const roadbody = new CANNON.Body({ type: CANNON.Body.STATIC, mass: 0,material:mat1Phys});
+    const roadbody = new CANNON.Body({ type: CANNON.Body.STATIC, mass: 0});
     for(var i=0;i<canasta.children.length;i++){
         //var newGeometry = BufferGeometryUtils.mergeVertices(canasta.children[i].geometry);
         var newGeometry = BufferGeometryUtils.mergeVertices(canasta.children[i].geometry);
