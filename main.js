@@ -193,7 +193,6 @@ function Update() {
     }
     if(!isChanged && creado && arcade!=null && pantalla!=null && sala!=null && canasta!=null && ball!=null){
         creado=false;
-        CrearPantalla();
         Init();
     }
     if(creado && canvas1!=null && pantalla!=null){
