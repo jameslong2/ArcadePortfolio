@@ -397,7 +397,7 @@ function MoverAbajo(){
         marginTop-=number;
         for(var i=0;i<elements.length;i++){
             var value=marginTop+number*(i);
-            elements[i].style.setProperty('top', value+'%');
+            elements[i].style.setProperty('top', value+'px');
         }
         
         creado=false;
