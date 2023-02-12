@@ -416,7 +416,7 @@ function MoverArriba(){
             
             console.log(number);
             var value=marginTop+number*(i+1);
-            elements[i].style.setProperty('top', value+'%');
+            elements[i].style.setProperty('top', value+'px');
         }
         marginTop+=number;
         creado=false;
