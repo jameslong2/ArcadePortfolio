@@ -19,9 +19,12 @@ document.querySelector("#izquierda").addEventListener("click", IrAtras);
 document.body.addEventListener("click",PlayBasquet);
 window.addEventListener("mousedown",Drag);
 window.addEventListener("mouseup", DragStop);
+document.getElementById("botonPlay").addEventListener("click",ponerVideo);
+document.getElementById("botonBack").addEventListener("click",quitarVideo);
+var isVideoPlaying=false;
 var number=90;
 var actualElement=0;
-var marginTop=100;
+var marginTop=350;
 var isChanged=false;
 var lerp=0;
 var isMoving=false;
@@ -66,7 +69,7 @@ var physMat=new CANNON.Material({friction:0.1});
 const ballBody=new CANNON.Body({type:CANNON.Body.DYNAMIC,mass:1});
 ballBody.addShape(new CANNON.Sphere(19));
 ballBody.position.set(-153.5,200,410);
-//ballBody.angularDamping=1;
+ballBody.angularDamping=0.01;
 physicsWorld.addBody(ballBody);
 
 //renderer.render(scene, camera);
@@ -369,6 +372,7 @@ function Init(){
             
             mousePos.copy( camera.position ).add( vec.multiplyScalar( distance ) );
         }else{
+            isOverBall=false;
             pointer.x=(event.offsetX / canvas.clientWidth) * 2 - 1;
             pointer.y=-(event.offsetY / canvas.clientHeight) * 2 + 1;
             raycaster.setFromCamera(pointer,camera);
@@ -379,6 +383,7 @@ function Init(){
         }
     }
     window.addEventListener("mousemove",onMouseMove);
+    document.getElementById("loadingScreen").style.display="none";
 }
 function CrearPantalla(){
  pantalla.children[0].material.map=new THREE.CanvasTexture(canvas1.getContext('2d').canvas);
@@ -432,7 +437,17 @@ function IrAlante(){
         actualPoint++;
         isMoving=true;
     }
+    if(actualPoint==1){
+        if(isVideoPlaying){
+            document.getElementById("botonBack").style.display="block";
+        }else{
 
+            ActivarFlechas();
+        }
+    }else{
+        document.getElementById("botonBack").style.display="none";
+        DesactivarFlechas();
+    }
 }
 function IrAtras(){
     if(actualPoint!=0){
@@ -440,7 +455,27 @@ function IrAtras(){
         actualPoint--;
         isMoving=true;
     }
-    
+    if(actualPoint==1){
+        if(isVideoPlaying){
+            document.getElementById("botonBack").style.display="block";
+        }else{
+
+            ActivarFlechas();
+        }
+    }else{
+        document.getElementById("botonBack").style.display="none";
+        DesactivarFlechas();
+    }
+}
+function ActivarFlechas(){
+    document.getElementById("abajo").style.display="block";
+    document.getElementById("arriba").style.display="block";
+    document.getElementById("botonPlay").style.display="block";
+}
+function DesactivarFlechas(){
+    document.getElementById("abajo").style.display="none";
+    document.getElementById("arriba").style.display="none";
+    document.getElementById("botonPlay").style.display="none";
 }
 function ApplyColor(){
     let elements=document.getElementsByClassName("elementoProyecto");
@@ -457,8 +492,8 @@ function ApplyColor(){
 function PlayBasquet(){
     if(isOverBall){
         ballClicked=true;
-        ballBody.angularVelocity.set(0,0,0);
-        ballBody.quaternion.set(0,0,0,0);
+        //ballBody.angularVelocity.set(0,0,0);
+        //ballBody.quaternion.set(0,0,0,0);
     }
 }
 function Drag(){
@@ -479,6 +514,20 @@ function DragStop(){
         var velocity=distance/(lastTime-firstTime);
         ballBody.applyImpulse(new CANNON.Vec3(offsetx,distance*4.3,-velocity*500));
     }
+}
+function ponerVideo(){
+    document.getElementsByClassName( 'video' )[actualElement].play();
+    pantalla.children[0].material.map=new THREE.VideoTexture( document.getElementsByClassName( 'video' )[actualElement] );
+    DesactivarFlechas();
+    document.getElementById("botonBack").style.display="block";
+    isVideoPlaying=true;
+}
+function quitarVideo(){
+    document.getElementsByClassName( 'video' )[actualElement].pause();
+    ActivarFlechas();
+    CrearPantalla();
+    document.getElementById("botonBack").style.display="none";
+    isVideoPlaying=false;
 }
 //
 //

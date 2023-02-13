@@ -17,7 +17,7 @@
             width: 100%;
             height: 100%;
         }
-        #video{
+        .video{
             display: none;
         }
         #contenido{
@@ -62,30 +62,93 @@
         }
         #proyecto1{
             background-color: rgb(90, 90, 255);
-            top:100px;
+            top:350px;
         }
         #proyecto2{
-            top:190px;
+            top:440px;
         }
         #proyecto3{
-            top:260px;
+            top:530px;
         }
         #proyecto4{
-            top:330px;
+            top:620px;
+        }
+        #proyecto5{
+            top:710px;
+        }
+        #proyecto6{
+            top:800px;
+        }
+        #proyecto7{
+            top:890px;
+        }
+        #proyecto8{
+            top:980px;
+        }
+        #proyecto9{
+            top:1070px;
+        }
+        #proyecto10{
+            top:1160px;
+        }
+        #proyecto11{
+            top:1250px;
+        }
+        #proyecto12{
+            top:1340px;
+        }
+        #proyecto13{
+            top: 1430px;;
         }
         .elementoProyecto{
             text-align: center;
             position: fixed;
             width: 256px;
         }
+        .btn{
+            position: fixed;
+            top:60%;
+            left:60%;
+        }
+        #botonBack{
+            display: none;
+        }
+        #loadingScreen{
+            z-index: 10;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: black;
+        }
+        #loading{
+            position: relative;
+            top:45%;
+            left:45%;
+            width: 10%;
+            filter: blur(2px);
+        }
     </style>
 </head>
 <body>
 
 
-    <!--<video controls autoplay id="video">
-        <source src="elvideofinal.mp4" type="video/mp4">
-      </video>-->
+    <video src="VideosWeb/1.mp4" class="video"></video>
+    <video src="VideosWeb/2.mp4" class="video"></video>
+    <video src="VideosWeb/3.mp4" class="video"></video>
+    <video src="VideosWeb/4.mp4" class="video"></video>
+    <video src="VideosWeb/5.mp4" class="video"></video>
+    <video src="VideosWeb/6.mp4" class="video"></video>
+    <video src="VideosWeb/7.mp4" class="video"></video>
+    <video src="VideosWeb/8.mp4" class="video"></video>
+    <video src="VideosWeb/9.mp4" class="video"></video>
+    <video src="VideosWeb/10.mp4" class="video"></video>
+    <video src="VideosWeb/11.mp4" class="video"></video>
+    <video src="VideosWeb/12.mp4" class="video"></video>
+    <video src="VideosWeb/13.mp4" class="video"></video>
+
+    <div id="loadingScreen">
+        <img src="loading.gif" alt="loading" id="loading">
+    </div>
     <div id="contenido">
         <div id="proyecto1" class="elementoProyecto">
             <p>Elemento 1</p>
@@ -99,7 +162,36 @@
         <div id="proyecto4" class="elementoProyecto">
             <p>Elemento 4</p>
         </div>
+        <div id="proyecto5" class="elementoProyecto">
+            <p>Elemento 5</p>
+        </div>
+        <div id="proyecto6" class="elementoProyecto">
+            <p>Elemento 6</p>
+        </div>
+        <div id="proyecto7" class="elementoProyecto">
+            <p>Elemento 7</p>
+        </div>
+        <div id="proyecto8" class="elementoProyecto">
+            <p>Elemento 8</p>
+        </div>
+        <div id="proyecto9" class="elementoProyecto">
+            <p>Elemento 9</p>
+        </div>
+        <div id="proyecto10" class="elementoProyecto">
+            <p>Elemento 10</p>
+        </div>
+        <div id="proyecto11" class="elementoProyecto">
+            <p>Elemento 11</p>
+        </div>
+        <div id="proyecto12" class="elementoProyecto">
+            <p>Elemento 12</p>
+        </div>
+        <div id="proyecto13" class="elementoProyecto">
+            <p>Elemento 13</p>
+        </div>
     </div>
+    <button id="botonPlay" class="btn">Play</button>
+    <button id="botonBack" class="btn">Back</button>
     <img src="./Flecha.png" alt="" id="arriba">
     <img src="./Flecha.png" alt="" id="abajo">
     <img src="./Flecha.png" alt="" id="derecha">
