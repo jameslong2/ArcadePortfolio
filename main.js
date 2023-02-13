@@ -63,10 +63,10 @@ const physicsWorld = new CANNON.World({
 const cannonDebugger = new CannonDebugger(scene, physicsWorld);
 
 var physMat=new CANNON.Material({friction:0.1});
-const ballBody=new CANNON.Body({type:CANNON.Body.DYNAMIC,mass:1,material:physMat});
+const ballBody=new CANNON.Body({type:CANNON.Body.DYNAMIC,mass:1});
 ballBody.addShape(new CANNON.Sphere(19));
 ballBody.position.set(-153.5,200,410);
-ballBody.angularDamping=0.14;
+//ballBody.angularDamping=1;
 physicsWorld.addBody(ballBody);
 
 //renderer.render(scene, camera);
@@ -427,14 +427,20 @@ function MoverArriba(){
 
 }
 function IrAlante(){
-    previousPoint=actualPoint;
-    actualPoint++;
-    isMoving=true;
+    if(actualPoint!=2){
+        previousPoint=actualPoint;
+        actualPoint++;
+        isMoving=true;
+    }
+
 }
 function IrAtras(){
-    previousPoint=actualPoint;
-    actualPoint--;
-    isMoving=true;
+    if(actualPoint!=0){
+        previousPoint=actualPoint;
+        actualPoint--;
+        isMoving=true;
+    }
+    
 }
 function ApplyColor(){
     let elements=document.getElementsByClassName("elementoProyecto");
