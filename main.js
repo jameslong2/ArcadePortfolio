@@ -324,7 +324,7 @@ function Init(){
      var elvector2=new THREE.Vector3();
      sala.children[8].getWorldPosition(elvector2);
      points.push(elvector2);
-    pantalla.children[0].material.color.multiplyScalar(0.1);
+    pantalla.children[0].material.color.multiplyScalar(0.095);
     var spotlight1=new THREE.SpotLight('white',1000,0,55);
     scene.add(spotlight1);
     scene.add(spotlight1.target);
@@ -521,6 +521,9 @@ function ponerVideo(){
     DesactivarFlechas();
     document.getElementById("botonBack").style.display="block";
     isVideoPlaying=true;
+    camera.position.z =140;
+    camera.position.y = 240;
+    camera.position.x = 0;
 }
 function quitarVideo(){
     document.getElementsByClassName( 'video' )[actualElement].pause();
@@ -528,6 +531,9 @@ function quitarVideo(){
     CrearPantalla();
     document.getElementById("botonBack").style.display="none";
     isVideoPlaying=false;
+    camera.position.z =230;
+    camera.position.y = 230;
+    camera.position.x = 0;
 }
 //
 //
