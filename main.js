@@ -520,6 +520,8 @@ function ponerVideo(){
     pantalla.children[0].material.map=new THREE.VideoTexture( document.getElementsByClassName( 'video' )[actualElement] );
     DesactivarFlechas();
     document.getElementById("botonBack").style.display="block";
+    document.querySelector("#derecha").style.display="none";
+    document.querySelector("#izquierda").style.display="none";
     isVideoPlaying=true;
     camera.position.z =140;
     camera.position.y = 240;
@@ -530,6 +532,8 @@ function quitarVideo(){
     ActivarFlechas();
     CrearPantalla();
     document.getElementById("botonBack").style.display="none";
+    document.querySelector("#derecha").style.display="block";
+    document.querySelector("#izquierda").style.display="block";
     isVideoPlaying=false;
     camera.position.z =230;
     camera.position.y = 230;
